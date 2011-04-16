@@ -51,6 +51,14 @@ class BuildsController < ApplicationController
       render_not_found
     end
   end
+
+  def call
+    @project = Project.find(params[:project])
+
+    @build = @project.find_build(params[:build])
+
+    render :xml => @build.to_xml  
+  end
   
   private
   def get_mime_type(name)

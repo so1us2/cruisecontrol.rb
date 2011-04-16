@@ -215,4 +215,7 @@ EOF
     [revision[0..6], rebuild_number].compact.join('.')
   end
 
+  def to_xml
+    {:Response => {:Play => 'http://dl.dropbox.com/u/5133818/Works/TearingApart.wav'}}.to_xml
+  end
 end

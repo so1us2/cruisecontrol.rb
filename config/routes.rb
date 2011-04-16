@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.builds_drop_down 'builds/older/:project', :controller => 'builds', :action => 'drop_down'
   map.project_without_builds 'builds/:project', :controller => 'builds', :action => 'show'
   map.build 'builds/:project/:build', :controller => 'builds', :action => 'show', :build => /[^\/]+/
+  map.call 'calls/:project/:build', :controller => 'builds', :action => 'call', :build => /[^\/]+/
   
   map.build_artifact 'builds/:project/:build/*path', :controller => 'builds', :action => 'artifact', :build => /[^\/]+/
   map.code 'projects/code/:id/*path', :controller => 'projects', :action => 'code'
